@@ -8,9 +8,10 @@ class _0112_PathSumTest {
 
     @Test
     void hasPathSum1() {
+        // Given
         _0112_PathSum pathSum = new _0112_PathSum();
         
-        // 트리 노드 만든느 방법 확인 필요
+        // 트리 노드 만드는 방법 확인 필요
         _0112_TreeNode treeNode = new _0112_TreeNode(5);
         _0112_TreeNode treeNode1 = new _0112_TreeNode(4);
         _0112_TreeNode treeNode2 = new _0112_TreeNode(8);
@@ -30,10 +31,16 @@ class _0112_PathSumTest {
         treeNode3.right = treeNode7;
         treeNode5.right = treeNode8;
 
-        assertTrue(pathSum.hasPathSum(treeNode, 22));
+        // When
+        int targetSum = 22;
+        boolean ret = pathSum.hasPathSum(treeNode, targetSum);
+
+        // Then
+        assertTrue(ret);
     }
 
     void hasPathSum2() {
+        // Given
         _0112_PathSum pathSum = new _0112_PathSum();
 
         _0112_TreeNode treeNode = new _0112_TreeNode(1);
@@ -43,14 +50,25 @@ class _0112_PathSumTest {
         treeNode.left = treeNode1;
         treeNode.right = treeNode2;
 
-        assertFalse(pathSum.hasPathSum(treeNode, 5));
+        // When
+        int targetSum = 5;
+        boolean ret = pathSum.hasPathSum(treeNode, targetSum);
+
+        // Then
+        assertFalse(ret);
     }
 
     void hasPathSum3() {
+        // Given
         _0112_PathSum pathSum = new _0112_PathSum();
 
         _0112_TreeNode treeNode = new _0112_TreeNode();
 
-        assertFalse(pathSum.hasPathSum(treeNode, 0));
+        // When
+        int targetSum = 0;
+        boolean ret = pathSum.hasPathSum(treeNode, targetSum);
+
+        // Then
+        assertFalse(ret);
     }
 }
