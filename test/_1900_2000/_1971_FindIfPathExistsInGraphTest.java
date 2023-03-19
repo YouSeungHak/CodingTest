@@ -111,7 +111,7 @@ class _1971_FindIfPathExistsInGraphTest {
                 1,
                 new int[][] {},
                 0,
-                5);
+                0);
 
         // When
         boolean ret = findIfPathExistsInGraph.validPath(givenDataDTO.getN(), givenDataDTO.getEdges(), givenDataDTO.getSource(), givenDataDTO.getDestination());
