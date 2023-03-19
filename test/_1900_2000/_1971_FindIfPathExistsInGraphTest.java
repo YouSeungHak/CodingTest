@@ -87,6 +87,23 @@ class _1971_FindIfPathExistsInGraphTest {
     }
 
     @Test
+    void validPathNormal3() {
+        // Given
+        _1971_FindIfPathExistsInGraph findIfPathExistsInGraph = new _1971_FindIfPathExistsInGraph();
+        _1971_GivenDataDTO givenDataDTO = new _1971_GivenDataDTO(
+                3,
+                new int[][] {{0, 1}, {1, 2}, {2, 0}},
+                0,
+                0);
+
+        // When
+        boolean ret = findIfPathExistsInGraph.validPath(givenDataDTO.getN(), givenDataDTO.getEdges(), givenDataDTO.getSource(), givenDataDTO.getDestination());
+
+        // Then
+        assertTrue(ret);
+    }
+
+    @Test
     void validPathDataN1() {
         // Given
         _1971_FindIfPathExistsInGraph findIfPathExistsInGraph = new _1971_FindIfPathExistsInGraph();
@@ -100,6 +117,6 @@ class _1971_FindIfPathExistsInGraphTest {
         boolean ret = findIfPathExistsInGraph.validPath(givenDataDTO.getN(), givenDataDTO.getEdges(), givenDataDTO.getSource(), givenDataDTO.getDestination());
 
         // Then
-        assertFalse(ret);
+        assertTrue(ret);
     }
 }
