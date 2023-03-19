@@ -39,6 +39,7 @@ class _0112_PathSumTest {
         assertTrue(ret);
     }
 
+    @Test
     void hasPathSum2() {
         // Given
         _0112_PathSum pathSum = new _0112_PathSum();
@@ -58,17 +59,77 @@ class _0112_PathSumTest {
         assertFalse(ret);
     }
 
+    @Test
     void hasPathSum3() {
         // Given
         _0112_PathSum pathSum = new _0112_PathSum();
 
-        _0112_TreeNode treeNode = new _0112_TreeNode();
-
         // When
         int targetSum = 0;
+        boolean ret = pathSum.hasPathSum(null, targetSum);
+
+        // Then
+        assertFalse(ret);
+    }
+
+    @Test
+    void hasPathSum4() {
+        // Given
+        _0112_PathSum pathSum = new _0112_PathSum();
+
+        _0112_TreeNode treeNode = new _0112_TreeNode(-51);
+        _0112_TreeNode treeNode1 = new _0112_TreeNode(-72);
+        _0112_TreeNode treeNode2 = new _0112_TreeNode(32);
+        _0112_TreeNode treeNode3 = new _0112_TreeNode(82);
+        _0112_TreeNode treeNode4 = new _0112_TreeNode(-512);
+        _0112_TreeNode treeNode5 = new _0112_TreeNode(-777);
+        _0112_TreeNode treeNode6 = new _0112_TreeNode(899);
+
+        treeNode.left = treeNode1;
+        treeNode.right = treeNode2;
+        treeNode1.left = treeNode3;
+        treeNode3.left = treeNode4;
+        treeNode2.left = treeNode5;
+        treeNode2.right = treeNode6;
+
+        // When
+        int targetSum = -796;
+        boolean ret = pathSum.hasPathSum(treeNode, targetSum);
+
+        // Then
+        assertTrue(ret);
+    }
+
+    @Test
+    void hasPathSum5() {
+        // Given
+        _0112_PathSum pathSum = new _0112_PathSum();
+
+        _0112_TreeNode treeNode = new _0112_TreeNode(1);
+        _0112_TreeNode treeNode1 = new _0112_TreeNode(2);
+
+        treeNode.left = treeNode1;
+
+        // When
+        int targetSum = 1;
         boolean ret = pathSum.hasPathSum(treeNode, targetSum);
 
         // Then
         assertFalse(ret);
+    }
+
+    @Test
+    void hasPathSum6() {
+        // Given
+        _0112_PathSum pathSum = new _0112_PathSum();
+
+        _0112_TreeNode treeNode = new _0112_TreeNode(1);
+
+        // When
+        int targetSum = 1;
+        boolean ret = pathSum.hasPathSum(treeNode, targetSum);
+
+        // Then
+        assertTrue(ret);
     }
 }
