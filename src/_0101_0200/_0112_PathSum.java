@@ -4,9 +4,10 @@ public class _0112_PathSum {
     int targetSum = 0;
     boolean ret = false;
     public void plusPathSum(_0112_TreeNode node, int targetSum) {
-        if(node == null) {
+        if(this.ret)
             return;
-        }
+        if(node == null)
+            return;
         this.targetSum += node.val;
         if(node.left == null && node.right == null) {
             if(this.targetSum == targetSum)
