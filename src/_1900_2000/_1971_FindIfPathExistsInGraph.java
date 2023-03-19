@@ -19,7 +19,7 @@ class _1971_Node {
 
 public class _1971_FindIfPathExistsInGraph {
 
-    boolean isPathSourceToDestinationInBFS(Map<Integer, _1971_Node> graph, int source, int destination) {
+    boolean IsPathSourceToDestinationInBFS(Map<Integer, _1971_Node> graph, int source, int destination) {
         // destination 값을 만나면 리턴 true 못 만나면 return false
         Queue<_1971_Node> queue = new LinkedList<>();
 
@@ -60,10 +60,10 @@ public class _1971_FindIfPathExistsInGraph {
     }
 
     public boolean validPath(int n, int[][] edges, int source, int destination) {
-        if(n == 1 || source == destination)
+        if(source == destination)
             return true;
 
         Map<Integer, _1971_Node> graph = CreateGraph(n, edges);
-        return isPathSourceToDestinationInBFS(graph, source, destination);
+        return IsPathSourceToDestinationInBFS(graph, source, destination);
     }
 }
