@@ -3,8 +3,8 @@ package _1900_2000;
 import java.util.*;
 
 class _1971_Node {
-    int nodeNum;
-    ArrayList<_1971_Node> nodeList = new ArrayList<>();
+    final int nodeNum;
+    AbstractList<_1971_Node> nodeList = new ArrayList<>();
     boolean visited;
 
     _1971_Node(int n) {
@@ -24,7 +24,7 @@ public class _1971_FindIfPathExistsInGraph {
         graph.get(source).visited = true;
         queue.add(graph.get(source));
 
-        while (queue.size() > 0) {
+        while (!queue.isEmpty()) {
             _1971_Node curNode = queue.poll();
             for(int i = 0; i < curNode.nodeList.size(); i++) {
                 if(!curNode.nodeList.get(i).visited) {
