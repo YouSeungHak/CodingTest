@@ -36,23 +36,41 @@ public class _0881_BoatsToSavePeople {
 //        return count;
 //    }
 
+//    public int numRescueBoats(int[] people, int limit) {
+//        int count = 0;
+//
+//        ArrayList<Integer> peopleList = new ArrayList<>();
+//        for (int weight : people) {
+//            peopleList.add(weight);
+//        }
+//        Collections.sort(peopleList, Collections.reverseOrder());
+//
+//        while(count < peopleList.size()) {
+//            if(peopleList.get(count) < limit) {
+//                for (int j = count + 1; j < peopleList.size(); j++) {
+//                    if (peopleList.get(count) + peopleList.get(j) <= limit) {
+//                        peopleList.remove(j);
+//                        break;
+//                    }
+//                }
+//            }
+//            count++;
+//        }
+//
+//        return count;
+//    }
+
     public int numRescueBoats(int[] people, int limit) {
+        // 배열 내림차순으로 정렬하기
+        Integer[] weight = Arrays.stream(people).boxed().toArray(Integer[]::new);
+        Arrays.sort(weight, Collections.reverseOrder());
+
+        // 앞 인덱스와 뒤 인덱스가 같아지는 순간까지 돌리면 된다.
         int count = 0;
-
-        ArrayList<Integer> peopleList = new ArrayList<>();
-        for (int weight : people) {
-            peopleList.add(weight);
-        }
-        Collections.sort(peopleList, Collections.reverseOrder());
-
-        while(count < peopleList.size()) {
-            if(peopleList.get(count) < limit) {
-                for (int j = count + 1; j < peopleList.size(); j++) {
-                    if (peopleList.get(count) + peopleList.get(j) <= limit) {
-                        peopleList.remove(j);
-                        break;
-                    }
-                }
+        int lastIndex = weight.length;
+        for(int i = 0; i < lastIndex; i++) {
+            if(weight[i] + weight[lastIndex -1] <= limit) {
+                lastIndex--;
             }
             count++;
         }
