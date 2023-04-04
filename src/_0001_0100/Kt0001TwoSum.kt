@@ -2,7 +2,7 @@ package _0001_0100
 
 class Kt0001TwoSum {
     fun twoSumWithHash(nums: IntArray, target: Int): IntArray {
-        val map = HashMap<Int, Int>()
+        val map = mutableMapOf<Int, Int>();
 
         for (i in nums.indices)
         {
