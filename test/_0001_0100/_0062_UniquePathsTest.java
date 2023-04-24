@@ -52,20 +52,4 @@ class _0062_UniquePathsTest {
         // Then
         assertEquals(ret, output);
     }
-
-    @Test
-    void case4() {
-        // Given
-        _0062_UniquePaths uniquePaths = new _0062_UniquePaths();
-        int m = 100;
-        int n = 100;
-        int output = 28;
-
-        // When
-        int ret = uniquePaths.uniquePaths(m, n);
-
-        // Then
-        assertEquals(ret, output);
-    }
-
 }
